@@ -233,11 +233,8 @@ game.hascountries = function(continent,countries) {
 			hit++;
 		}		
 	}
-	if (hit < i) {
-		return false;
-	} else {
-		return true;
-	}
+	
+	return !(hit < i);
 }
 
 
@@ -668,12 +665,7 @@ ai.getWeakestcountry = function(countries) {
 		}
 	}
 	//console.log(weakest);
-	if (weakest!="") {
-		return weakest;
-	} else {
-		return false;
-	}
-	
+	return weakest != "" ? weakest : false;
 }
 
 ai.getstrength = function(country) {
